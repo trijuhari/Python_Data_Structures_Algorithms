@@ -70,3 +70,4 @@ my_linked_list.append_list(1)
 my_linked_list.append_list(3)
 
 print(my_linked_list.get(0))
+print(my_linked_list.get(2))
