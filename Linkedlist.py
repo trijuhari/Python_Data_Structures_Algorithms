@@ -83,8 +83,20 @@ class LinkedList:
         temp.next = new_node
         self.length +=1
         return  True
-
-
+    def remove(self,index):
+        if index < 0 and index>= self.length:
+            return None
+        if index == 0 :
+            return self.pop_first()
+        if index ==  self.length -1:
+            return self.pop()
+        # in the middle 
+        prev = self.get(index-1)
+        temp =  prev.next
+        prev.next = temp.next
+        temp.next = None
+        self.length -=1
+        return temp.value
 
 
 my_linked_list = LinkedList(2)
@@ -93,5 +105,7 @@ my_linked_list.append_list(3)
 
 
 my_linked_list.set_value(1,56)
+
 my_linked_list.insert(1,1)
-my_linked_list.print_list()
+print(my_linked_list.remove(2),'\n')
+my_linked_list.print_list() 
